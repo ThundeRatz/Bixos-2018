@@ -1,0 +1,14 @@
+.PHONY: all clean
+all: texto.txt
+
+clean:
+	rm 1_processado.txt 2_processado.txt texto.txt
+
+texto.txt: 1_processado.txt 2_processado.txt
+	cat 1_processado.txt 2_processado.txt > texto.txt
+
+1_processado.txt: 1.txt
+	sed '/^NOTE/d' 1.txt > 1_processado.txt
+
+2_processado.txt: 2.txt
+	sed '/^NOTE/d' 2.txt > 2_processado.txt

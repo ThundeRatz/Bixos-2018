@@ -1,5 +1,5 @@
 # Projeto Final
-## Processo Seletivo da Computação - ThundeRatz 2017
+## Processo Seletivo da Computação - ThundeRatz 2018
 
 Olá de novo! Aqui serão dadas instruções para a última parte do Processo Seletivo da Computação da equipe.
 

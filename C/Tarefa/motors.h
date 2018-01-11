@@ -1,8 +1,8 @@
 /**
- * Processo Seletivo 2017 - motors.h
+ * Processo Seletivo 2018 - motors.h
  *
  * Equipe ThundeRatz de Robótica
- * 03/2017
+ * 03/2018
  */
 
 #pragma once

@@ -1,8 +1,8 @@
 /**
- * Processo Seletivo 2017 - motors.c
+ * Processo Seletivo 2018 - motors.c
  *
  * Equipe ThundeRatz de Robótica
- * 03/2017
+ * 03/2018
  */
 
 #include <avr/io.h>

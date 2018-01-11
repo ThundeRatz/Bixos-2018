@@ -31,7 +31,7 @@ Já usando SSH, não será necessário digitar as informações de sua conta tod
 
 No caso desse repositório, o comando seria:
 
-`git clone https://github.com/ThundeRatz/Bixos-2017.git`
+`git clone https://github.com/ThundeRatz/Bixos-2018.git`
 
 ### Usando SSH
 
@@ -43,7 +43,7 @@ Feita essa configuração, o processo de clonar o repositório é basicamente o 
 
 No caso desse repositório, o comando seria:
 
-`git clone git@github.com:ThundeRatz/Bixos-2017.git`
+`git clone git@github.com:ThundeRatz/Bixos-2018.git`
 
 ## Trabalhando com o repositório
 

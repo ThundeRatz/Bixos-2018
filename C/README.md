@@ -113,17 +113,17 @@ Para compilar o programa na pasta Exemplo:
 * Linux
 ```bash
 # Na pasta que clonaram o seu fork do repositório dos bixos
-~/Bixos-2017$ cd C/PC/Exemplos
+~/Bixos-2018$ cd C/PC/Exemplos
 # Para compilar
-~/Bixos-2017/C/Exemplos$ gcc -o exemplo *.c # Aqui diz "todos os arquivos terminados em .c na pasta atual"
+~/Bixos-2018/C/Exemplos$ gcc -o exemplo *.c # Aqui diz "todos os arquivos terminados em .c na pasta atual"
 # Para executar
-~/Bixos-2017/C/Exemplos$ ./exemplo
+~/Bixos-2018/C/Exemplos$ ./exemplo
 ```
 * Windows
 ```
-C:\Bixos-2017> cd C\PC\Exemplos
-C:\Bixos-2017\C\Exemplos> gcc -o exemplo.exe *.c
-C:\Bixos-2017\C\Exemplos> exemplo.exe
+C:\Bixos-2018> cd C\PC\Exemplos
+C:\Bixos-2018\C\Exemplos> gcc -o exemplo.exe *.c
+C:\Bixos-2018\C\Exemplos> exemplo.exe
 ```
 ---
 ## AVR

@@ -69,22 +69,7 @@ int func(int a) {
 ```
 ---
 ## Compilação
-Programas em C são compilados usando o gcc (GNU Compiler Collection), para instalá-lo:
-* Linux (provavelmente já tem, mas para garantir):
-```bash
-$ apt-get update
-$ sudo apt-get install gcc
-```
-* Windows
- * Primeiro você deve instalar o [mingw-get][mingw-down] (Minimalist GNU for Windows);
- * Vá à [wiki][mingw-wiki] dele na parte de Environment Settings e faça o que está lá;
- * Depois:
- ```
- > mingw-get update
- > mingw-get install gcc
- ```
-
-Para usar o gcc (igual para linux e windows):
+Programas em C são compilados usando o gcc (GNU Compiler Collection), para usá-lo:
 * Primeiro deve-se criar os objetos dos arquivos fonte que se deseja compilar:
 ```bash
 $ gcc -c main.c helloworld.c # Gera main.o e helloworld.o

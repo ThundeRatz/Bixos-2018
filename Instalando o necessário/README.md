@@ -93,10 +93,26 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ### Linux
 No Linux, instale os pacotes utilizando os seguintes comandos no terminal:
 
+#### Ubuntu
 ```bash
-$ sudo apt-get update
-$ sudo apt-get install gcc build-essential make git gcc-avr gdb-avr binutils-avr avr-libc avrdude
+$ sudo apt update
+$ sudo apt install gcc build-essential make git gcc-avr gdb-avr binutils-avr avr-libc avrdude
 ```
+
+#### Fedora
+```bash
+$ sudo dnf upgrade
+$ sudo dnf install gcc make git avr-gcc avr-gdb avr-binutils avr-libc avrdude
+```
+
+#### Arch Linux
+```bash
+$ sudo pacman -Syu
+$ sudo pacman -S gcc make git avr-gcc avr-gdb avr-binutils avr-libc avrdude
+```
+
+Há outras distribuições do Linux com gerenciadores de pacotes diferentes. Com uma pesquisa rápida no Google
+você consegue encontrar a forma equivalente para instalar os pacotes na sua distribuição.
 
 Quaisquer dúvidas ou problemas, podem nos procurar.
 

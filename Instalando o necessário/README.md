@@ -6,7 +6,7 @@ Para realizar as tarefas do Processo Seletivo, é necessário instalar algumas c
 * Git;
 * Pacotes do AVR.
 
-Explicaremos o que são essas coisas mais tarde.
+Explicaremos o que são essas coisas nas aulas.
 
 ## Instruções para instalar
 

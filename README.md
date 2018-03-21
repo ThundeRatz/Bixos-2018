@@ -13,8 +13,8 @@ Instalem antes tudo o que for necessário para realizar as tarefas do Processo S
 É importante que já vejam a parte dos tutoriais de C logo. Apesar de alguns de vocês já terem C em MAC2166, algumas coisas que vocês ainda não viram serão necessárias.
 
 O planejamento atual das aulas é esse:
-* Git - 22/03 - ??h?? (Já tenham uma conta no GitHub)
-* C - 26/03 - ??h?? (Tem uns links no repositório, que quem não sabe nada de C pode ir dando uma olhada, porque é impossível ensinar tudo de C em uma aula, são só algumas coisas a mais)
-* Make - 02/04 - ??h??
+* Git - 22/03 - 17h30 (Já tenham uma conta no GitHub)
+* C - 27/03 - 15h00 (Tem uns links no repositório, que quem não sabe nada de C pode ir dando uma olhada, porque é impossível ensinar tudo de C em uma aula, são só algumas coisas a mais)
+* Make - 03/04 - 17h00
 
 Mais detalhes sobre a segunda parte do PS estão nos README da pasta do [Projeto Final](https://github.com/ThundeRatz/Bixos-2018/tree/master/Projeto%20Final).

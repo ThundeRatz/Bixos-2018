@@ -31,7 +31,7 @@ Após isso, é preciso colocar a pasta do msys2 nas variáveis de ambiente do Wi
 5. Digite o caminho para os executáveis MSYS2, normalmente C:\msys64\usr\bin.
 6. Clique em "OK".
 
-Agora abra o Prompt de Comando para testar se os pacotes foram instalados corretamente.
+Agora abra o Prompt de Comando (não o MSYS2, o prompt de comando normal do Windows) para testar se os pacotes foram instalados corretamente.
 Para testar se gcc foi instalado corretamente, digite:
 
 `gcc -v`
@@ -52,7 +52,7 @@ Para testar se make foi instalado corretamente, digite:
 
 `make -v`
 
-Algo parecido com isso deve aparecer no seu prompt de comando:
+Algo parecido com isso deve aparecer no seu prompt de comando (não o MSYS2, o prompt de comando normal do Windows):
 
 ```
 GNU Make 4.2.1
@@ -73,11 +73,9 @@ Algo parecido com isso deve aparecer no seu prompt de comando:
 git version 2.15.0
 ```
 
-Para instalar os pacotes do AVR, instale o [WinAVR][win-avr]. Durante a instação, certifique-se que a opção "Add directories to PATH" esteja selecionada.
+Para instalar os pacotes do AVR, baixe o [WinAVR][win-avr] e extraia no diretório C:/ (ou seja, ficará C:/WinAVR-20100110). Após isso, adicione os caminhos C:\WinAVR-20100110\bin e C:\WinAVR-20100110\utils\bin na variável de ambiente Path, como feito acima com o MSYS2. **ATENÇÃO:** Tenha certeza que o caminho do MSYS2 fique acima do caminho do WinAVR. Há uma prioridade nessa variável de ambiente, e as que ficam acima (ou antes) tem prioridade maior. MSYS2 deve ter prioridade maior que WinAVR.
 
-Edite a variável de ambiente Path novamente, movendo o diretório do MSYS para cima dos diretórios do WinAVR.
-
-Para verificar se os pacotes de AVR foram instalados corretamente, digite, no prompt de comando:
+Para verificar se os pacotes de AVR foram instalados corretamente, digite, no prompt de comando (não o MSYS2, o prompt de comando normal do Windows):
 
 `avr-gcc --version`
 
@@ -117,4 +115,4 @@ você consegue encontrar a forma equivalente para instalar os pacotes na sua dis
 Quaisquer dúvidas ou problemas, podem nos procurar.
 
 [msys2]: http://www.msys2.org/
-[win-avr]: http://winavr.sourceforge.net/index.html
+[win-avr]: https://drive.google.com/file/d/1ZE_It_z3gDIoBECLKdoM5hPJlx3ujqsL/view?usp=sharing

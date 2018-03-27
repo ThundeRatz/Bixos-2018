@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-float Q_rsqrt( float number ){
+float Quake( float number ){
 	long i;
 	float x2, y;
 	const float threehalfs = 1.5F;
@@ -25,7 +25,7 @@ int main(){
 	
 	scanf("%f", &test);
 	
-	test = Q_rsqrt(test);
+	test = Quake(test);
 	
 	printf("%f\n", test);
 	

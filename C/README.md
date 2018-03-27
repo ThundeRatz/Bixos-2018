@@ -142,9 +142,9 @@ int main() {
 ```
 Mas ficar escrevendo esses número binários é muito chato, então existem uns operadores úteis, o primeiro é o bit-shift (`<<` ou `>>`) que faz o shift de um número, ou seja, desloca os bits dele na direção desejada um certo número de vezes, por exemplo:
 ```c
-1 << 6 = 0b1000000 // Desloquei o umero 1 6 vezes para a esquerda
-0b101 << 3 = 0b101000
-0b1001 >> 2 = 0b0010 // Aqui desloquei para a direita, assim perco bits menos significativos
+1 << 6 equivale a 0b1000000 // Desloquei o umero 1 6 vezes para a esquerda
+0b101 << 3 equivale a 0b101000
+0b1001 >> 2 equivale a 0b0010 // Aqui desloquei para a direita, assim perco bits menos significativos
 ```
 Com isso podemos setar bits em registradores muito mais fácil, por exemplo, se eu quiser fazer como no exemplo, poderia fazer `DDRB = (1 << 3)` ou, usando as definições de pino `DDRB = (1 << PB3)`.
 

@@ -1,5 +1,5 @@
 ## Exercícios de C/AVR
-Nas pastas 1, 2, 3 e D encontrarão alguns exercícios para treinarem o que aprenderam na aulinha, além de precisarem ir atrás de coisas a mais na internet em alguns casos. Intruções específicas estão disponíveis nas pastas.
+Nas pastas 1 e 2 encontrarão alguns exercícios para treinarem o que aprenderam na aulinha, além de precisarem ir atrás de coisas a mais na internet em alguns casos. Instruções específicas estão disponíveis nas pastas.
 
 
 Lembrem que devem usar o que aprenderam na aula de git para:

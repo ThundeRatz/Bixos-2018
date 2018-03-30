@@ -296,12 +296,15 @@ posicao compara(int a[MAXLINHA][MAXCOLUNA], int b[MAXLINHA][MAXCOLUNA], int linh
         return erro;
     }
 
-    for (int i = 0; i < linhasA; i++) {
-        for (int j = 0; j < colunasA; j++) {
-            if (a[i][j] != b[i][j]) {
-                erro.linha = i;
-                erro.coluna = j;
-                return erro;
+    else{
+        
+        for (int i = 0; i < linhasA; i++) {
+            for (int j = 0; j < colunasA; j++) {
+                if (a[i][j] != b[i][j]) {
+                    erro.linha = i;
+                    erro.coluna = j;
+                    return erro;
+                }
             }
         }
     }

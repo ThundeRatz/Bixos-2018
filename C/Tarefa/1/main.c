@@ -1,7 +1,7 @@
-#import <stdio.h>
-#import <stdlib.h>
-#import <string.h>
-#import <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
 #define MAXLINHA   400
 #define MAXCOLUNA  400
@@ -195,7 +195,6 @@ void main(int argc, char *argv[]) {
             }
         }
     }
-    return 0;
 }
 
 void imprimeMatriz(int m[MAXLINHA][MAXCOLUNA], int linhas, int colunas) {

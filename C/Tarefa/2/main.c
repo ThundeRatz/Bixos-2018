@@ -11,10 +11,6 @@ int main() {
 
     for (;;) { // Loop infinito
         // Leia os valores, trate-os e envie-os aqui
-        sensor[i].leitura = get_value()
-        if (sensor[i].leitura > sensor[i].threshold) {
-            
-        }
     }
 
     return 0;

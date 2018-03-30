@@ -16,6 +16,8 @@ int get_value() {
 
 void send_data(uint8_t data) {
     // Desfaçam o empacotamento e imprimam
+    int 
+    
 
     for (int i = 0; i < 8; i++)
         printf("Sensor %d: %d", i, );

@@ -15,6 +15,9 @@
 
 #ifdef max
 #undef max
+#endif
+
+
 
 int copia[MAXLINHA][MAXCOLUNA];
 
@@ -56,7 +59,7 @@ void main(int argc, char *argv[]) {
     int linhas, colunas, maiorValor, check, larguraJanela, k, limiteValido = 0;
     const char comandos[] = "nrvhedmz123xctgCas";
     char comando = 0;
-    int flag = 0
+    int flag = 0;
 
     if (argc < 2) {
         printf("Usage: %s <arquivo entrada>\n", argv[0]);
@@ -96,7 +99,7 @@ void main(int argc, char *argv[]) {
 
         if (comando == '1' || comando == '2' || comando == '3') {
             printf("Informe o valor de k: ");
-            scanf("%d", &k)
+            scanf("%d", &k);
         }
 
         if (comando = 'n') negativo(imagem, linhas, colunas);
@@ -194,7 +197,7 @@ void main(int argc, char *argv[]) {
             }
         }
     }
-    return 0;
+    
 }
 
 void imprimeMatriz(int m[MAXLINHA][MAXCOLUNA], int linhas, int colunas) {
@@ -227,7 +230,7 @@ void menu() {
     printf("s - sair\n\n");
 }
 
-void troca(int a, int b) {
+void troca(int* a, int* b) {
     int aux;
     aux = *a;
     *a = *b;
@@ -429,7 +432,7 @@ void filtroMediana(int m[MAXLINHA][MAXCOLUNA], int linhas, int colunas, int larg
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
             n = 0;
-            for (int k = i - larguraJanela/2, k <= i + larguraJanela/2, k++) {
+            for (int k = i - larguraJanela/2; k <= i + larguraJanela/2; k++) {
                 for (int l = j - larguraJanela/2; l <= j + larguraJanela/2; l++) {
                     if (k >= 0 && l >= 0 && k < linhas && l < colunas) {
                         vizinhanca[n] = copia[k][l];

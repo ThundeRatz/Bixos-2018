@@ -1,3 +1,2 @@
 #!/usr/bin/bash
-gcc -o resultado sensors.c main.c
-./resultado
+gcc -o resultado sensors.c main.c -Wall -Wextra

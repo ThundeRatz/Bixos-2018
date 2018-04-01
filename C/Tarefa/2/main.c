@@ -11,6 +11,13 @@ int main() {
 
     for (;;) { // Loop infinito
         // Leia os valores, trate-os e envie-os aqui
+        uint8_t byte = 0 << 7;
+        for (int i = 0; i < 8; i++) {
+            sensors[i].leitura = get_value();
+            if (sensors[i].leitura > sensors[i].threshold)
+                byte = byte | 1 << (9-i);
+        }
+        send_data(byte);   
     }
 
     return 0;

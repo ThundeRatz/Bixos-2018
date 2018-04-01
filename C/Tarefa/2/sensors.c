@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <time.h>
 
 #include "sensors.h"
 
@@ -16,7 +18,11 @@ int get_value() {
 
 void send_data(uint8_t data) {
     // Desfaçam o empacotamento e imprimam
-
-    for (int i = 0; i < 8; i++)
-        printf("Sensor %d: %d", i, );
+    //printf("%d\n",data);
+    uint8_t res;
+    for (int i = 0; i < 8; i++) {
+        res = data >> (7-i);
+        res = res & 1 << 0;
+        printf("Sensor %d: %d\n", i, res);
+    }    
 }

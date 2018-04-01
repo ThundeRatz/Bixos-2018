@@ -21,8 +21,8 @@ void send_data(uint8_t data) {
     //printf("%d\n",data);
     uint8_t res;
     for (int i = 0; i < 8; i++) {
-        res = data >> (7-i);
-        res = res & 1 << 0;
+        res = data >> (7-i); //Mover a o número correspondendo ao sensor[i] para a direita (o máximo possível)
+        res = res & 1 << 0; //verificar se esse número é 0 ou 1
         printf("Sensor %d: %d\n", i, res);
     }    
 }

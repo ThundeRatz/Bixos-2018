@@ -15,7 +15,8 @@ int main() {
         for (int i = 0; i < 8; i++) {
             sensors[i].leitura = get_value();
             if (sensors[i].leitura > sensors[i].threshold)
-                byte = byte | 1 << (9-i);
+                byte = byte | 1 << (9-i); //colocar o 1 na posição correspondente ao i
+                //considerei o sensor 0 o que está mais na esquerda e o 8 o mais na direita
         }
         send_data(byte);   
     }

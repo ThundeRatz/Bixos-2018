@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-tarefa1.exe imagem
+./tarefa1 imagem

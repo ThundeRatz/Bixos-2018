@@ -18,7 +18,7 @@ int get_value() {
 
 void send_data(uint8_t data) {
     // Desfaçam o empacotamento e imprimam
-    printf("%d\n",data);
+    //printf("%d\n",data);
     uint8_t res; 
     for (int i = 0; i < 8; i++) {
         res = data >> (7-i); //Mover o número correspondendo ao sensor[i] para a direita (o máximo possível)

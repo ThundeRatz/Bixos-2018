@@ -19,13 +19,13 @@ int get_value() {
 void send_data(uint8_t data) {
     // Desfaçam o empacotamento e imprimam
     int valores[8];
-    uint8_t mascara = 0b1;
-    uint8_t valor;
-
-
-    for (int i=0;i<8;i++){
-        mascara << (7-i); //usando máscara
-        valor = data & mascara; //determinando qual o rsultado da operação logica
+    
+     for (int i=0;i<8;i++){
+        uint8_t mascara = 0b1;
+        uint8_t valor;
+        
+        mascara = mascara << (7-i); //usando máscara
+        valor = data & mascara; //determinando qual o resultado da operação logica
         if (valor != 0){
             valores[i] = 1;
         }

@@ -20,7 +20,7 @@ void send_data(uint8_t data) {
     // Desfaçam o empacotamento e imprimam
     int valores[8];
     
-     for (int i=0;i<8;i++){
+    for (int i = 0; i < 8 ; i++){
         uint8_t mascara = 0b1;
         uint8_t valor;
         
@@ -29,14 +29,15 @@ void send_data(uint8_t data) {
         if (valor != 0){
             valores[i] = 1;
         }
-        else {
+        else 
+        {
             valores[i] = 0;
         }
         
     }
     
     for (int i = 0; i < 8; i++){
-        printf("Sensor %d: %d", i, valores[i] );
+        printf("Sensor %d: %d \n", i, valores[i] );
 
     }
 }

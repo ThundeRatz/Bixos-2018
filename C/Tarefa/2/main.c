@@ -10,9 +10,9 @@ int main() {
         sensors[i].threshold = 250;
         sensors[i].leitura = get_value(); //é gerada a leitura do sensor
     }
-
-    for (int i = 0;i < 8;i++) { // Loop infinito
-        // Leia os valores, trate-os e envie-os aqui
+    for(;;){ //Loop infinito
+    // Leia os valores, trate-os e envie-os aqui
+    for (int i = 0;i < 8;i++) {
        printf("Sensor %d %d ",i+1,sensors[i].leitura); //mostra o sensor e o valor da leitura
         if(sensors[i].leitura <=250){ //verifica se a leitura está entre 0 e 250, caso verdadeiro adiciona o bit 1
             printf("valor a enviar 1\n");
@@ -24,5 +24,6 @@ int main() {
         }
     }
     send_data(bin); //envia a variável com a condição dos sensores
+    }
     return 0;
 }

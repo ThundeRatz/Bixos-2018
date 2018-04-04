@@ -426,7 +426,6 @@ void filtroMediana(int m[MAXLINHA][MAXCOLUNA], int linhas, int colunas, int larg
             copia[i][j] = m[i][j];
         }
     }
-
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
             n = 0;

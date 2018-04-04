@@ -24,6 +24,5 @@ int main() {
         }
     }
     send_data(bin); //envia a variável com a condição dos sensores
-
     return 0;
 }

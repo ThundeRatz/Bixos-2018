@@ -12,7 +12,6 @@ int get_value() {
         //srand(time(NULL));
         initialized = 1;
     }
-
     return rand() % 500;
 }
 

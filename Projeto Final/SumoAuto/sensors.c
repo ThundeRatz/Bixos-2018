@@ -1,71 +1,38 @@
+#include <avr/io.h>
 #include "sensors.h"
 
-uint16_t distance[5] = { 0 };
+uint16_t line_sensors[2];
+uint16_t distance_sensors[2];
 
-uint16_t line[5] = { 0 };
-
-uint16_t gyro[3] = { 0 };
-uint16_t accel[3] = { 0 };
-
+/* inicializa os sensores */
 void sensors_init() {
-	/**
-	 Faz as inicializações necessarias para
-	 os sensores funcionarem
-	*/
+    DDRC &= ~(1 << PC0) & ~(1 << PC1) & ~(1 << PC2) & ~(1 << PC3);
+    ADMUX |= (1 << REFS0);
+    ADCSRA |= (1 << ADEN) | (1 << ADPS2);
 }
 
-void update_distance() {
-	/**
-	 Atualiza o valor de leitura dos sensores
-	 de distancia no vetor distance.
+/* atualiza valor dos sensores de linha */
+void update_line_sensors() {
+    ADMUX = (ADMUX & 0xF8) | 2;
+    ADCSRA |= (1 << ADSC);
+    while (ADCSRA & (1 << ADSC));
+    line_sensors[0] = ADC;
 
-	 distance[0] -> sensor lateral esquerdo
-	 distance[1] -> sensor frontal esquerdo
-	 distance[2] -> sensor frontal central
-	 distance[3] -> sensor frontal direito
-	 distance[4] -> sensor lateral direito
-
-	 O valor de cada sensor varia de 0 a 1023,
-	 sendo 0 o valor ideal para nada sendo visto e
-	 1023 muito próximo.
-	*/
+    ADMUX = (ADMUX & 0xF8) | 3;
+    ADCSRA |= (1 << ADSC);
+    while (ADCSRA & (1 << ADSC));
+    line_sensors[1] = ADC;
 }
 
-void update_line() {
-	/**
-	 Atualiza o valor de leitura dos sensores
-	 de linha no vetor line.
+/* atualiza valor dos sensores de distância */
+void update_distance_sensors() {
+    ADMUX = (ADMUX & 0xF8) | 0;
+    ADCSRA |= (1 << ADSC);
+    while (ADCSRA & (1 << ADSC));
+    distance_sensors[0] = ADC;
 
-	 line[0] -> sensor do canto superior esquerdo
-	 line[1] -> sensor do canto superior direito
-	 line[2] -> sensor do canto inferior direito
-	 line[3] -> sensor do canto inferior esquerdo
-
-	 O valor de cada sensor varia de 0 a 1023,
-	 sendo 0 o valor ideal para preto e 1023
-	 para branco.
-	*/
-
-}
-
-void update_accel() {
-	/**
-	 Atualiza o valor de leitura do sensor
-	 de seis eixos nos vetores gyro e accel
-
-	 gyro[0] -> rotação no eixo X
-	 gyro[0] -> rotação no eixo Y
-	 gyro[0] -> rotação no eixo Z
-
-	 accel[0] -> aceleração no eixo X
-	 accel[0] -> aceleração no eixo Y
-	 accel[0] -> aceleração no eixo Z
-
-	 Sendo X o eixo que aponta apara a frente do robô,
-	 Y o eixo que aponta para a esquerda e Z para cima.
-
-	 O valor de cada sensor varia de 0 a 1023,
-	 sendo 0 o valor ideal para preto e 1023
-	 para branco.
-	*/
+    ADMUX = (ADMUX & 0xF8) | 1;
+    ADCSRA |= (1 << ADSC);
+    while (ADCSRA & (1 << ADSC));
+    distance_sensors[1] = ADC;
 }

@@ -1,8 +1,7 @@
-#pragma once
-
-/**
- * Includes
- */
+#ifndef MOTORS_H
+#define MOTORS_H
 
 void motors_init();
-void motors(int16_t vel_left, int16_t vel_right);
+void motors(int velL, int velR);
+
+#endif

@@ -9,7 +9,7 @@
 #define JANELA_MIN 3
 #define MAX_NAME   256
 
-#ifndef min
+#ifdef min
 #undef min
 #endif
 

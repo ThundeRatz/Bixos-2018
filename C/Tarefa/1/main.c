@@ -51,7 +51,7 @@ void filtroBorda1(int m[MAXLINHA][MAXCOLUNA], int linhas, int colunas, int largu
 void filtroBorda2(int m[MAXLINHA][MAXCOLUNA], int linhas, int colunas, int larguraJanela, int k);
 void filtroBorda3(int m[MAXLINHA][MAXCOLUNA], int linhas, int colunas, int larguraJanela, int k);
 
-void main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
     char prefixo_arquivo_out[MAX_NAME - 4];
     int imagem[MAXLINHA][MAXCOLUNA];
     int linhas, colunas, maiorValor, check, larguraJanela, k, limiteValido = 0;
@@ -89,7 +89,7 @@ void main(int argc, char *argv[]) {
                     printf("Digite o tamanho da janela: ");
                     scanf("%d", &larguraJanela);
                     if (larguraJanela < JANELA_MIN || larguraJanela > JANELA_MAX) {
-                        printf("Tamanho invalido. A janela deve ser entre %d e %d.\n", JANELA_MIN);
+                        printf("Tamanho invalido. A janela deve ser entre %d e %d.\n", JANELA_MIN,JANELA_MAX);
                     }
                 }
             }
@@ -100,18 +100,18 @@ void main(int argc, char *argv[]) {
             scanf("%d", &k);
         }
 
-        if (comando = 'n') negativo(imagem, linhas, colunas);
-        if (comando = 'r') rotacao(imagem, &linhas, &colunas);
-        if (comando = 'v') rebatimentoVertical(imagem, linhas, colunas);
-        if (comando = 'h') rebatimentoHorizontal(imagem, linhas, colunas);
-        if (comando = 'e') filtroErosao(imagem, linhas, colunas, larguraJanela);
-        if (comando = 'd') filtroDilatacao(imagem, linhas, colunas, larguraJanela);
-        if (comando = 'm') filtroMediana(imagem, linhas, colunas, larguraJanela);
-        if (comando = 'z') filtroMedia(imagem, linhas, colunas, larguraJanela);
-        if (comando = '1') filtroBorda1(imagem, linhas, colunas, larguraJanela, k);
-        if (comando = '2') filtroBorda2(imagem, linhas, colunas, larguraJanela, k);
-        if (comando = '3') filtroBorda3(imagem, linhas, colunas, larguraJanela, k);
-        if (comando = 'a') menu();
+        if (comando == 'n') negativo(imagem, linhas, colunas);
+        if (comando == 'r') rotacao(imagem, &linhas, &colunas);
+        if (comando == 'v') rebatimentoVertical(imagem, linhas, colunas);
+        if (comando == 'h') rebatimentoHorizontal(imagem, linhas, colunas);
+        if (comando == 'e') filtroErosao(imagem, linhas, colunas, larguraJanela);
+        if (comando == 'd') filtroDilatacao(imagem, linhas, colunas, larguraJanela);
+        if (comando == 'm') filtroMediana(imagem, linhas, colunas, larguraJanela);
+        if (comando == 'z') filtroMedia(imagem, linhas, colunas, larguraJanela);
+        if (comando == '1') filtroBorda1(imagem, linhas, colunas, larguraJanela, k);
+        if (comando == '2') filtroBorda2(imagem, linhas, colunas, larguraJanela, k);
+        if (comando == '3') filtroBorda3(imagem, linhas, colunas, larguraJanela, k);
+        if (comando == 'a') menu();
 
         if (comando == 'c') {
             check = 0;
@@ -195,7 +195,7 @@ void main(int argc, char *argv[]) {
             }
         }
     }
-    return;
+    return 0;
 }
 
 void imprimeMatriz(int m[MAXLINHA][MAXCOLUNA], int linhas, int colunas) {
@@ -301,8 +301,8 @@ posicao compara(int a[MAXLINHA][MAXCOLUNA], int b[MAXLINHA][MAXCOLUNA], int linh
             }
         }
     }
-
     erro.linha = erro.coluna = -2;
+    return erro;
 }
 
 int le_pgm(char* prefixo_do_nome, int m[MAXLINHA][MAXCOLUNA], int *linhas, int* colunas, int* maiorValor) {

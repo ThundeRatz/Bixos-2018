@@ -23,7 +23,7 @@ int main() {
             data |= (1<<j); //Coloca 1 na posicao do byte correspondente ao sensor
         else
             data &= ~(1<<j);
-            
+
         j++;
     }
     

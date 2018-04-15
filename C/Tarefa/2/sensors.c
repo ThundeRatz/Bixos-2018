@@ -16,11 +16,13 @@ int get_value() {
 }
 
 void send_data(uint8_t data) {
-    int k=1, i=0; //cria dois contadores
+    int i=0;
 	
-    for (i=7; i>=0; i--){
-	printf ("Sensor %d: %d\n", k, (data&1)); //k imprime o número do sensor, enquanto data&1 utiliza o operador lógico and para verificar se o bit mais significativo de data é 1, caso contrário, retornará 0. A ideia é de que, na utilização em um robô, bastaria enviar o valor de data&1 ao invés de utilizar o printf.
-	data = data>>1; //shifta data para a direita de forma a descartar o bit mais significativo, sendo assim, o próximo bit a direita (correpondente ao próximo sensor) será analisado e, no final, data estará reinicializado como 0
-	k+=1;
+    for (i=0; i<8; i++){
+	printf ("Sensor %d: %d\n", (i+1), (data%2)); /*data%2 imprime o bit 
+						       menos significativo de 
+						       data*/
+
+	data = data/2; //divide data por 2 para shiftar o binário para a direita
     }
 }

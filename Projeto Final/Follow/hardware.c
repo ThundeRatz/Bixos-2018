@@ -15,7 +15,7 @@
  *
  */
 
-void hardwareInit() {
+void hardware_init() {
 	// Disable watchdog timer.
 	MCUSR &= ~(1<<WDRF);
 	wdt_reset();
@@ -26,10 +26,10 @@ void hardwareInit() {
 	DDR_LED |= (1<<LED_BLUE) | (1<<LED_RED) | (1<<LED_YELLOW);
 
 	// Initialize sensors.
-	sensorsInit();
+	sensors_init();
 
 	// Initialize PWM generator at 32kHz.
-	motorsInit(PWM_32K);
+	motors_init(PWM_32K);
 
 	// Small delay for changes to be applied.
 	_delay_ms(100);
@@ -44,7 +44,7 @@ void hardwareInit() {
  *
  */
 
- void ledControl(unsigned char color, unsigned char action) {
+ void led_control(uint8_t color, uint8_t action) {
  	// Apply action to an LED according to specifications.
  	switch (action) {
  		case OFF:
@@ -66,7 +66,7 @@ void hardwareInit() {
  *  Retorna 1 se apertado, 0 caso contrario.
  */
 
-unsigned char buttonPressed(void) {
+uint8_t button_pressed() {
 	// If the button is pressed, the input reads '0' and 1 is returned; otherwise 0 is returned.
 	if (!(PIN_BUTTON & (1<<BUTTON))) {
 		return 1;

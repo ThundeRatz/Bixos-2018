@@ -15,7 +15,7 @@
 #define PWM_STEP	25
 #define PWM_DELAY	10
 
-void motorsInit(unsigned char pwmFrequency);
-void setMotors(int leftSpeed, int rightSpeed);
+void motors_init(uint8_t pwm_frequency);
+void set_motors(int left_speed, int right_speed);
 
 #endif /* _MOTORS_H */

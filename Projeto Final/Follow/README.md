@@ -25,12 +25,12 @@ Qualquer dúvida, existe uma pista seguindo exatamente essas regras do lado de f
 O programa que vocês vão fazer consiste em fazer esse robô seguir a linha, usando as coisas que ele tem e as características da pista (não precisa usar tudo). Para isso, podem usar as seguintes funções:
 
 ```c
-void hardwareInit();
-void setMotors(int leftSpeed, int rightSpeed);
-void sensorUpdate();  // atualiza todos os sensores de uma vez no vetor de sensores
-unsigned int sensorRead(sensor_t sensor);  // retorna a leitura de um sensor especifico
-void ledControl(unsigned char color, unsigned char action);
-unsigned char buttonPressed(void);
+void hardware_init();
+void set_motors(int left_speed, int right_speed);
+void sensor_update();  // atualiza todos os sensores de uma vez no vetor de sensores
+uint16_t sensor_read(sensor_t sensor);  // retorna a leitura de um sensor especifico
+void led_control(uint8_t color, uint8_t action);
+uint8_t button_pressed();
 ```
 
 Vocês podem fazer alterações em todos arquivos (e criar novos), da forma que preferirem. Podem usar o controle que preferirem, os dados de sensores que acharem necessário.

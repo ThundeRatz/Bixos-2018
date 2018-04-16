@@ -2,7 +2,7 @@
 #define _UTILS_H
 
 #define abs(x)		(((x) > 0) ? (x) : -(x))
-#define toUChar(x)	((unsigned char) ((x) > 255) ? 255 : (x))
+#define toUChar(x)	((uint8_t) ((x) > 255) ? 255 : (x))
 
 int map(int value, int formerMin, int formerMax, int newMin, int newMax);
 

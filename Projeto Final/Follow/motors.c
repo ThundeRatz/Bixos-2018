@@ -11,11 +11,11 @@ int formerLeftSpeed = 0, formerRightSpeed = 0;
  *	Inicializa as PWMs dos dois motores com a frequência especificada.
  *  Timer/Counter 1 é habilitado como geradores de PWM nos pinos PB1 (OC1A) e PB2 (OC1B)
  *
- *	pwmFrequency Especifica a frequência da PWM do motor
+ *	pwm_frequency Especifica a frequência da PWM do motor
  *
  */
 
-void motorsInit(unsigned char pwmFrequency)
+void motors_init(uint8_t pwm_frequency)
 {
 	// Initialize motor control pins as outputs.
 	DDR_MOTOR |= (1<<MOTOR_LF) | (1<<MOTOR_LEN) | (1<<MOTOR_REN) | (1<<MOTOR_LB) | (1<<MOTOR_RB) | (1<<MOTOR_RF);
@@ -24,11 +24,11 @@ void motorsInit(unsigned char pwmFrequency)
 	TCCR1A |= (1<<COM1A1) | (1<<COM1B1) | (1<<WGM10);
 
 	// If the desired frequency is either 30, 125, 500, 4k or 32kHz, set PWMs as 8-bit Fast PWM.
-    if (pwmFrequency % 2 != 0)
+    if (pwm_frequency % 2 != 0)
     	TCCR1B |= (1<<WGM12);
 
     // Sets prescaler according to desired PWM frequency.
-    TCCR1B += 1 + pwmFrequency / 2;
+    TCCR1B += 1 + pwm_frequency / 2;
 }
 
 /*  Ativa os dois motores com as velocidades escolhidas.
@@ -37,52 +37,52 @@ void motorsInit(unsigned char pwmFrequency)
  *  proporcional aos valores de velocidade especificados. Valores positivos são considerados
  *  rotação para frente.
  *
- *	leftSpeed Especifica a velocidade do motor da esqierda.
- *	rightSpeed Especifica a  velocidade do motor da direita.
+ *	left_speed Especifica a velocidade do motor da esqierda.
+ *	right_speed Especifica a  velocidade do motor da direita.
  *
  */
 
-void setMotors(int leftSpeed, int rightSpeed)
+void set_motors(int left_speed, int right_speed)
 {
 	// Prevents abrupt variations on the motors' speeds.
-	if (leftSpeed > formerLeftSpeed + PWM_STEP)
-		leftSpeed = formerLeftSpeed + PWM_STEP;
-	if (leftSpeed < formerLeftSpeed - PWM_STEP)
-		leftSpeed = formerLeftSpeed - PWM_STEP;
+	if (left_speed > formerLeftSpeed + PWM_STEP)
+		left_speed = formerLeftSpeed + PWM_STEP;
+	if (left_speed < formerLeftSpeed - PWM_STEP)
+		left_speed = formerLeftSpeed - PWM_STEP;
 
-	if (rightSpeed > formerRightSpeed + PWM_STEP)
-		rightSpeed = formerRightSpeed + PWM_STEP;
-	if (rightSpeed < formerRightSpeed - PWM_STEP)
-		rightSpeed = formerRightSpeed - PWM_STEP;
+	if (right_speed > formerRightSpeed + PWM_STEP)
+		right_speed = formerRightSpeed + PWM_STEP;
+	if (right_speed < formerRightSpeed - PWM_STEP)
+		right_speed = formerRightSpeed - PWM_STEP;
 
 	// Define direction and magnitude of both motors' rotations.
-	if (leftSpeed >= 0) {
+	if (left_speed >= 0) {
 		PORT_MOTOR |= (1<<MOTOR_LF);
 		PORT_MOTOR &= ~(1<<MOTOR_LB);
 
-		MOTOR_LPWM = toUChar(leftSpeed);
+		MOTOR_LPWM = toUChar(left_speed);
 	} else {
 		PORT_MOTOR &= ~(1<<MOTOR_LF);
 		PORT_MOTOR |= (1<<MOTOR_LB);
 
-		MOTOR_LPWM = toUChar(abs(leftSpeed));
+		MOTOR_LPWM = toUChar(abs(left_speed));
 	}
 
-	if (rightSpeed >= 0) {
+	if (right_speed >= 0) {
 		PORT_MOTOR |= (1<<MOTOR_RF);
 		PORT_MOTOR &= ~(1<<MOTOR_RB);
 
-		MOTOR_RPWM = toUChar(rightSpeed);
+		MOTOR_RPWM = toUChar(right_speed);
 	} else {
 		PORT_MOTOR &= ~(1<<MOTOR_RF);
 		PORT_MOTOR |= (1<<MOTOR_RB);
 
-		MOTOR_RPWM = toUChar(abs(rightSpeed));
+		MOTOR_RPWM = toUChar(abs(right_speed));
 	}
 
 	// Updates previous speed values.
-	formerLeftSpeed = leftSpeed;
-	formerRightSpeed = rightSpeed;
+	formerLeftSpeed = left_speed;
+	formerRightSpeed = right_speed;
 
 	// Small delay between speed updates.
 	_delay_ms(PWM_DELAY);

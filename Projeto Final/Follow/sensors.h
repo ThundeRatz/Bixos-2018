@@ -3,7 +3,7 @@
 
 #define NUM_SENSORS 7
 
-extern unsigned int sensors[NUM_SENSORS];
+extern uint16_t sensors[NUM_SENSORS];
 
 typedef enum {
     SENSOR2 = 0,
@@ -15,8 +15,8 @@ typedef enum {
     SENSOR7
 } sensor_t;
 
-void sensorsInit(void);
-void sensorsUpdate(void);
-unsigned int sensorRead(sensor_t sensor);
+void sensors_init();
+void sensors_update();
+uint16_t sensor_read(sensor_t sensor);
 
 #endif /* _SENSORS_H */

@@ -3,7 +3,7 @@
 #include "sensors.h"
 #include "utils.h"
 
-unsigned int sensors[NUM_SENSORS];
+uint16_t sensors[NUM_SENSORS];
 
 /*  Inicialização dos sensores.
  *
@@ -11,7 +11,7 @@ unsigned int sensors[NUM_SENSORS];
  *  no pino AREF (ligado em 5V)
  */
 
-void sensorsInit(void) {
+void sensors_init() {
 	ADCSRA |= (1<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0);
 }
 
@@ -23,14 +23,14 @@ void sensorsInit(void) {
  *
  */
 
-void sensorsUpdate(void) {
-	sensors[0] = sensorRead(SENSOR1);
-	sensors[1] = sensorRead(SENSOR2);
-	sensors[2] = sensorRead(SENSOR3);
-	sensors[3] = sensorRead(SENSOR4);
-	sensors[4] = sensorRead(SENSOR5);
-	sensors[5] = sensorRead(SENSOR6);
-	sensors[6] = sensorRead(SENSOR7);
+void sensors_update() {
+	sensors[0] = sensor_read(SENSOR1);
+	sensors[1] = sensor_read(SENSOR2);
+	sensors[2] = sensor_read(SENSOR3);
+	sensors[3] = sensor_read(SENSOR4);
+	sensors[4] = sensor_read(SENSOR5);
+	sensors[5] = sensor_read(SENSOR6);
+	sensors[6] = sensor_read(SENSOR7);
 }
 
 /*  Le o valor não processado de um canal de ADC.
@@ -43,7 +43,7 @@ void sensorsUpdate(void) {
  *
  */
 
-unsigned int sensorRead(sensor_t sensor) {
+uint16_t sensor_read(sensor_t sensor) {
 	// ADC channel must be within range 0 ~ 7.
 	sensor &= 7;
 

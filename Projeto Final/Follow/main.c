@@ -8,7 +8,7 @@
 
 
 int main(void) {
-	hardwareInit();
+	hardware_init();
 	for (;;) {
 		
 	}

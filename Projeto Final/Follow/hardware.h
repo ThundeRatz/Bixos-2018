@@ -37,8 +37,8 @@
 #define DDR_BUTTON	DDRD
 #define PIN_BUTTON	PIND
 
-void hardwareInit(void);
-void ledControl(unsigned char color, unsigned char action);
-unsigned char buttonPressed(void);
+void hardware_init();
+void led_control(uint8_t color, uint8_t action);
+uint8_t button_pressed();
 
 #endif /* _HARDWARE_H */

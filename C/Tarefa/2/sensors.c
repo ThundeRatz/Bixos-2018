@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdint.h>
-
+#include <time.h>
+#include <stdio.h>
 #include "sensors.h"
 
 static int initialized = 0;
@@ -15,8 +16,14 @@ int get_value() {
 }
 
 void send_data(uint8_t data) {
-    // Desfaçam o empacotamento e imprimam
+    int valor = 0;
 
     for (int i = 0; i < 8; i++)
-        printf("Sensor %d: %d", i, );
+    {
+        if((1<<i) & data) //Verifica se o valor da posicao i eh 1
+            valor = 1;
+        else              //Caso contrario, valor eh 0
+            valor = 0;
+        printf("Sensor %d: %d\n", i, valor);
+    }
 }

@@ -31,14 +31,7 @@
 #define ON			1
 #define TOGGLE 		2
 
-#define BUTTON		PD4
-
-#define PORT_BUTTON	PORTD
-#define DDR_BUTTON	DDRD
-#define PIN_BUTTON	PIND
-
 void hardware_init();
 void led_control(uint8_t color, uint8_t action);
-uint8_t button_pressed();
 
 #endif /* _HARDWARE_H */

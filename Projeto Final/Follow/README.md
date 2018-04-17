@@ -30,7 +30,7 @@ void set_motors(int left_speed, int right_speed);
 void sensor_update();  // atualiza todos os sensores de uma vez no vetor de sensores
 uint16_t sensor_read(sensor_t sensor);  // retorna a leitura de um sensor especifico
 void led_control(uint8_t color, uint8_t action);
-uint8_t button_pressed();
+uint32_t get_tick();
 ```
 
 Vocês podem fazer alterações em todos arquivos (e criar novos), da forma que preferirem. Podem usar o controle que preferirem, os dados de sensores que acharem necessário.

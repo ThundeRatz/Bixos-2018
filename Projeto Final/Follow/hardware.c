@@ -4,6 +4,7 @@
 #include "hardware.h"
 #include "motors.h"
 #include "sensors.h"
+#include "timer.h"
 
 /*  Inicialização do hardware.
  *
@@ -20,13 +21,15 @@ void hardware_init() {
 	MCUSR &= ~(1<<WDRF);
 	wdt_reset();
 	wdt_disable();
-	DDR_BUTTON &= ~ (1<<BUTTON);
 
 	// Initialize LED control pins as outputs.
 	DDR_LED |= (1<<LED_BLUE) | (1<<LED_RED) | (1<<LED_YELLOW);
 
 	// Initialize sensors.
 	sensors_init();
+
+	// Initialize timer.
+	timer_init();
 
 	// Initialize PWM generator at 32kHz.
 	motors_init(PWM_32K);
@@ -60,17 +63,3 @@ void hardware_init() {
  			break;
  	}
  }
-
-/*  Checa se botao for apertado.
- *
- *  Retorna 1 se apertado, 0 caso contrario.
- */
-
-uint8_t button_pressed() {
-	// If the button is pressed, the input reads '0' and 1 is returned; otherwise 0 is returned.
-	if (!(PIN_BUTTON & (1<<BUTTON))) {
-		return 1;
-	}
-
-	return 0;
-}

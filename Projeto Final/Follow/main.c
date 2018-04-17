@@ -5,12 +5,13 @@
 #include "motors.h"
 #include "sensors.h"
 #include "utils.h"
+#include "timer.h"
 
 
 int main(void) {
 	hardware_init();
 	for (;;) {
-		
+
 	}
 	return 0;
 }

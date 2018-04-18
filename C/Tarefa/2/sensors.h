@@ -1,3 +1,5 @@
+#pragma once
+
 #include <stdint.h>
 
 int get_value();

@@ -1,12 +1,17 @@
-#include "sensors.h"
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <util/delay.h>
+#include "hardware.h"
 #include "motors.h"
+#include "sensors.h"
+#include "utils.h"
 #include "timer.h"
 
-int main() {
+
+int main(void) {
+	hardware_init();
 	for (;;) {
 
-		_delay_ms(10);
 	}
-
 	return 0;
 }

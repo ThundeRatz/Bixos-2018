@@ -4,11 +4,9 @@ A categoria de Sumô Autonomo consiste em dois robôs posicionados num dojô e q
 
 ## Projeto
 ----
-O robô contém 2 sensores de distância, 2 sensores de linha e 1 sensor de 6 eixos (acelerômetro e giroscópio). A disposição dos sensores pode ser vista na gaiola.
+O robô contém 2 sensores de distância e 2 sensores de linha. A disposição dos sensores pode ser vista na gaiola.
 
 Os sensores de distância são [esses][sharp] e funcionam como no datasheet, operando em 5V.
-O sensor de 6 eixos é [esse][mpu].
-<!-- Não é certeza que terá um sensor de 6 eixos. Mudar aqui depois. -->
 
 ## Dojo
 
@@ -22,12 +20,11 @@ O programa que vocês vão fazer consiste em uma estratégia para esse robô, us
 
 ```c
 void sensors_init();
-void update_distance();
-void update_line();
-void update_accel();
+void update_distance_sensors();
+void update_line_sensors();
 
 void motors_init();
-void motors(int16_t vel_left, int16_t vel_right);
+void motors(int velL, int velR);
 
 void timer_init();
 uint32_t get_tick();

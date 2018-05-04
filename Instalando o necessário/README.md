@@ -115,4 +115,4 @@ você consegue encontrar a forma equivalente para instalar os pacotes na sua dis
 Quaisquer dúvidas ou problemas, podem nos procurar.
 
 [msys2]: http://www.msys2.org/
-[win-avr]: https://drive.google.com/file/d/1ZE_It_z3gDIoBECLKdoM5hPJlx3ujqsL/view?usp=sharing
+[win-avr]: https://drive.google.com/open?id=1--YGzAFbWHSz-_c6KYj2krtKtUGTI_OW

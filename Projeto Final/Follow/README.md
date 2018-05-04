@@ -4,7 +4,7 @@ A categoria Seguidor de Linha consiste em um robô que deve completar um percurs
 
 ## O robô
 ----
-O robô tem, como forma de sensoreamento, 5 sensores de linha, dispostos na frente do robô.
+O robô tem, como forma de sensoreamento, 7 sensores de linha, dispostos na frente do robô.
 
 O robô pode ser visto na gaiola.
 
@@ -22,12 +22,17 @@ Qualquer dúvida, existe uma pista seguindo exatamente essas regras do lado de f
 
 ## Programa
 
-O programa que vocês vão fazer consiste em fazer esse robô seguir a linha, usando as coisas que ele tem e as características da pistas(não precisa usar tudo). Para isso, devem usar as seguintes funções:
+O programa que vocês vão fazer consiste em fazer esse robô seguir a linha, usando as coisas que ele tem e as características da pista (não precisa usar tudo). Para isso, podem usar as seguintes funções:
 
 ```c
-void motors(int16_t velE, int16_t velD);
-
-uint16_t getLineSensor(uint16_t sensor);
+void hardware_init();
+void set_motors(int left_speed, int right_speed);
+void sensor_update();  // atualiza todos os sensores de uma vez no vetor de sensores
+uint16_t sensor_read(sensor_t sensor);  // retorna a leitura de um sensor especifico
+void led_control(uint8_t color, uint8_t action);
 uint32_t get_tick();
 ```
-Assumam que essas funções funcionam e estão implementadas, vocês podem fazer alterações em todos arquivos (e criar novos), da forma que preferirem. Podem usar o controle que preferirem, os dados de sensores que acharem necessário.
+
+Vocês podem fazer alterações em todos arquivos (e criar novos), da forma que preferirem. Podem usar o controle que preferirem, os dados de sensores que acharem necessário.
+
+Observação: Não precisa fazer o robô parar ao completar a pista.
